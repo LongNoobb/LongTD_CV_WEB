@@ -1,198 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tran Duc Long - CV</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tran Duc Long — Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+        body {
+            font-family: 'Inter',sans-serif;
+            background: linear-gradient(180deg,#eef2ff 0%, #ffffff 40%);
+            color: #0f172a;
+        }
 
-    body {
-      background: linear-gradient(135deg, #e0f2fe, #eef2ff, #f3e8ff);
-      color: #1e293b;
-      padding: 40px 20px;
-    }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 24px 40px;
+        }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
+        /* HERO */
+        .hero {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 48px;
+            align-items: center;
+        }
 
-    .card {
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
+        .avatar {
+            width: 280px;
+            height: 280px;
+            border-radius: 32px;
+            background: linear-gradient(135deg,#6366f1,#22c55e,#06b6d4);
+            box-shadow: 0 30px 60px rgba(99,102,241,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+            color: white;
+            font-weight: 800;
+        }
 
-    .header {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
-    }
+        .hero-right h1 {
+            font-size: 56px;
+            line-height: 1.05;
+            font-weight: 800;
+        }
 
-    .avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #38bdf8, #6366f1, #a855f7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 48px;
-      font-weight: bold;
-      box-shadow: 0 10px 25px rgba(99,102,241,0.4);
-    }
+        .role {
+            margin-top: 12px;
+            font-size: 20px;
+            color: #475569;
+            font-weight: 600;
+        }
 
-    h1 {
-      font-size: 38px;
-    }
+        .intro {
+            margin-top: 22px;
+            color: #475569;
+            line-height: 1.7;
+            font-size: 16px;
+            max-width: 560px;
+        }
 
-    .title {
-      color: #4f46e5;
-      font-weight: 600;
-      margin-top: 6px;
-    }
+        .contact-row {
+            margin-top: 26px;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
 
-    .desc {
-      margin-top: 12px;
-      color: #475569;
-      max-width: 600px;
-      line-height: 1.6;
-    }
+        .contact-btn {
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            font-weight: 600;
+            color: #0f172a;
+            transition: all .25s ease;
+        }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-    }
+            .contact-btn:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+                background: #eef2ff;
+                color: #4338ca;
+            }
 
-    .contact-item {
-      background: #f1f5f9;
-      padding: 14px 18px;
-      border-radius: 14px;
-      font-size: 14px;
-    }
+        /* GRID INFO */
+        .info-grid {
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 22px;
+        }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 25px;
-    }
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
 
-    h2 {
-      margin-bottom: 15px;
-      color: #4338ca;
-    }
+            .card h3 {
+                font-size: 18px;
+                margin-bottom: 16px;
+            }
 
-    ul {
-      padding-left: 18px;
-      color: #475569;
-      line-height: 1.8;
-    }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-    .exp-box, .edu-box {
-      background: #eef2ff;
-      padding: 16px;
-      border-radius: 14px;
-    }
+        .skill {
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: #eef2ff;
+            font-size: 14px;
+            font-weight: 600;
+            color: #3730a3;
+        }
 
-    footer {
-      text-align: center;
-      color: #64748b;
-      font-size: 14px;
-      margin-top: 10px;
-    }
+        /* EXPERIENCE BIG SECTION */
+        .experience {
+            margin-top: 80px;
+        }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 28px; }
-      .avatar { width: 100px; height: 100px; font-size: 32px; }
-    }
-  </style>
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+        }
+
+            .exp-header h2 {
+                font-size: 36px;
+            }
+
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .project {
+            background: white;
+            border-radius: 22px;
+            padding: 28px;
+            border: 1px solid #e2e8f0;
+            transition: all .25s ease;
+        }
+
+            .project:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+            }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .project-title {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .project-meta {
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            margin-top: 14px;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .tech {
+            margin-top: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+            .tech span {
+                background: #f1f5f9;
+                padding: 8px 14px;
+                border-radius: 10px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:1000px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center
+            }
+
+            .avatar {
+                margin: auto
+            }
+        }
+
+        @media(max-width:700px) {
+            .hero-right h1 {
+                font-size: 36px
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <div class="container">
+    <div class="container">
 
-    <!-- Header -->
-    <div class="card header">
-      <div class="avatar">Q</div>
+        <!-- HERO -->
+        <section class="hero">
 
-      <div>
-        <h1>Tran Duc Long</h1>
-        <div class="title">Game Developer / Unity Developer</div>
-        <div class="desc">
-          Passionate developer focusing on gameplay systems, performance optimization, and interactive experiences.
-          Experienced in Unity, C#, and game architecture design.
-        </div>
-      </div>
+            <div class="avatar">TL</div>
+
+            <div class="hero-right">
+                <h1>Tran Duc Long</h1>
+                <div class="role">Unity Developer</div>
+
+                <p class="intro">
+                    Unity developer passionate about gameplay systems, performance optimization,
+                    and building fun player experiences. I enjoy solving technical problems and
+                    turning game ideas into polished interactive products.
+                </p>
+
+                <div class="contact-row">
+                    <a class="contact-btn" href="mailto:tranduclong09@gmail.com">Email</a>
+                    <a class="contact-btn" href="tel:+84958254580">Phone</a>
+                    <a class="contact-btn" href="https://github.com/LongNoobb" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- INFO GRID -->
+        <section class="info-grid">
+
+            <div class="card">
+                <h3>Education</h3>
+                <p><b>FPT University Ha Noi</b></p>
+                <p>Software Engineering</p>
+                <p>2021 — 2025</p>
+            </div>
+
+            <div class="card">
+                <h3>Skills</h3>
+                <div class="skills">
+                    <span class="skill">Unity</span>
+                    <span class="skill">C#</span>
+                    <span class="skill">Gameplay</span>
+                    <span class="skill">Optimization</span>
+                    <span class="skill">AI Integration</span>
+                    <span class="skill">Git</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Languages</h3>
+                <p>Vietnamese</p>
+                <p>English (B2)</p>
+            </div>
+
+        </section>
+
+        <!-- EXPERIENCE BIG AREA -->
+        <section class="experience">
+
+            <div class="exp-header">
+                <h2>Experience & Projects</h2>
+            </div>
+
+            <div class="projects">
+
+                <div class="project">
+                    <div class="project-top">
+                        <div class="project-title">Food War</div>
+                        <div class="project-meta">Card Strategy • 6/2025 — Present</div>
+                    </div>
+
+                    <div class="project-desc">
+                        Designed and implemented turn-based card gameplay systems,
+                        deck building mechanics, and balancing logic. Worked with AI
+                        systems and data tuning for better player experience.
+                    </div>
+
+                    <div class="tech">
+                        <span>Unity</span>
+                        <span>C#</span>
+                        <span>AI</span>
+                        <span>Game Design</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-top">
+                        <div class="project-title">Blackout: The Vagabond's Odyssey</div>
+                        <div class="project-meta">3D Roguelike • 1/2025 — 5/2025</div>
+                    </div>
+
+                    <div class="project-desc">
+                        Designed combat systems, skill architecture, and implemented
+                        performance optimizations to maintain stable FPS across gameplay scenes.
+                    </div>
+
+                    <div class="tech">
+                        <span>Unity</span>
+                        <span>C#</span>
+                        <span>Optimization</span>
+                        <span>Combat System</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 Tran Duc Long — Portfolio
+        </footer>
+
     </div>
-
-    <!-- Contact -->
-    <div class="card contact-grid">
-      <div class="contact-item">📧 tranduclong09@gmail.com</div>
-      <!--<div class="contact-item">📱 +84 xxx xxx xxx</div>-->
-      <div class="contact-item">💻 https://github.com/LongNoobb</div>
-      <div class="contact-item">📍 Ha Noi, Viet Nam</div>
-    </div>
-
-    <!-- Skills + Experience -->
-    <div class="grid-2">
-
-      <div class="card">
-        <h2>Skills</h2>
-        <ul>
-          <li>Unity Engine</li>
-          <li>C# Programming</li>
-          <li>Gameplay System Design</li>
-          <li>Performance Optimization</li>
-          <li>Git / Version Control</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Experience</h2>
-        <div class="exp-box">
-          <b>Game Developer</b><br>
-          Company Name • 2023 - Present
-          <p style="margin-top:8px">
-            Developed gameplay systems, optimized performance, and implemented core game mechanics.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Education -->
-    <div class="card">
-      <h2>Education</h2>
-      <div class="edu-box">
-        <b>Your University</b><br>
-        Major • Year - Year
-      </div>
-    </div>
-
-    <footer>
-      © 2026 Quan Nguyen
-    </footer>
-
-  </div>
 
 </body>
 </html>
-
