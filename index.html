@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Tran Duc Long — Portfolio</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -25,7 +26,6 @@
             padding: 60px 24px 40px;
         }
 
-        /* HERO */
         .hero {
             display: grid;
             grid-template-columns: 420px 1fr;
@@ -83,7 +83,7 @@
             border: 1px solid #e2e8f0;
             font-weight: 600;
             color: #0f172a;
-            transition: all .25s ease;
+            transition: .25s;
         }
 
             .contact-btn:hover {
@@ -93,7 +93,6 @@
                 color: #4338ca;
             }
 
-        /* GRID INFO */
         .info-grid {
             margin-top: 70px;
             display: grid;
@@ -108,15 +107,10 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
 
-            .card h3 {
-                font-size: 18px;
-                margin-bottom: 16px;
-            }
-
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 10px
         }
 
         .skill {
@@ -128,26 +122,19 @@
             color: #3730a3;
         }
 
-        /* EXPERIENCE BIG SECTION */
         .experience {
-            margin-top: 80px;
+            margin-top: 80px
         }
 
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            margin-bottom: 30px;
+        .exp-header h2 {
+            font-size: 36px;
+            margin-bottom: 30px
         }
-
-            .exp-header h2 {
-                font-size: 36px;
-            }
 
         .projects {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 30px
         }
 
         .project {
@@ -155,7 +142,7 @@
             border-radius: 22px;
             padding: 28px;
             border: 1px solid #e2e8f0;
-            transition: all .25s ease;
+            transition: .25s;
         }
 
             .project:hover {
@@ -172,25 +159,74 @@
 
         .project-title {
             font-size: 22px;
-            font-weight: 700;
+            font-weight: 700
         }
 
         .project-meta {
             color: #64748b;
-            font-weight: 600;
+            font-weight: 600
         }
 
         .project-desc {
             margin-top: 14px;
             color: #475569;
-            line-height: 1.7;
+            line-height: 1.7
+        }
+
+        /* SWIPE GALLERY */
+        .gallery {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            margin-top: 20px;
+        }
+
+        .gallery-track {
+            display: flex;
+            transition: transform .4s ease;
+        }
+
+        .gallery img {
+            width: 100%;
+            flex-shrink: 0;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .gallery-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .gallery-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+            opacity: .5;
+        }
+
+            .gallery-dot.active {
+                opacity: 1
+            }
+
+        .project iframe {
+            width: 100%;
+            height: 420px;
+            border: none;
+            border-radius: 16px;
+            margin-top: 18px;
         }
 
         .tech {
             margin-top: 16px;
             display: flex;
             gap: 10px;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
             .tech span {
@@ -205,10 +241,9 @@
             margin-top: 60px;
             text-align: center;
             color: #94a3b8;
-            font-size: 14px;
+            font-size: 14px
         }
 
-        /* RESPONSIVE */
         @media(max-width:1000px) {
             .hero {
                 grid-template-columns: 1fr;
@@ -236,9 +271,7 @@
 
     <div class="container">
 
-        <!-- HERO -->
         <section class="hero">
-
             <div class="avatar">TL</div>
 
             <div class="hero-right">
@@ -247,20 +280,17 @@
 
                 <p class="intro">
                     Unity developer passionate about gameplay systems, performance optimization,
-                    and building fun player experiences. I enjoy solving technical problems and
-                    turning game ideas into polished interactive products.
+                    and building fun player experiences.
                 </p>
 
                 <div class="contact-row">
                     <a class="contact-btn" href="mailto:tranduclong09@gmail.com">Email</a>
-                   
                     <a class="contact-btn" href="https://github.com/LongNoobb" target="_blank">GitHub</a>
                 </div>
             </div>
-
         </section>
 
-        <!-- INFO GRID -->
+        <!-- INFO GRID (ABOUT / EDUCATION / SKILLS) -->
         <section class="info-grid">
 
             <div class="card">
@@ -290,7 +320,6 @@
 
         </section>
 
-        <!-- EXPERIENCE BIG AREA -->
         <section class="experience">
 
             <div class="exp-header">
@@ -299,36 +328,60 @@
 
             <div class="projects">
 
+                <!-- PROJECT -->
                 <div class="project">
+
                     <div class="project-top">
                         <div class="project-title">Food War</div>
-                        <div class="project-meta">Card Strategy • 6/2025 — Present</div>
+                        <div class="project-meta">Card Strategy • 2025 — Present</div>
                     </div>
 
                     <div class="project-desc">
-                        Designed and implemented turn-based card gameplay systems,
-                        deck building mechanics, and balancing logic. Worked with AI
-                        systems and data tuning for better player experience.
+                        Turn-based card gameplay, deck building and balancing logic.
                     </div>
+
+                    <!-- SWIPE IMAGE GALLERY -->
+                    <div class="gallery">
+                        <div class="gallery-track">
+                            <img src="C:\Users\DUCLONG\Desktop\MyWebsite\asset\Screenshot 2026-01-21 204316.png">
+                            <img src="C:\Users\DUCLONG\Desktop\MyWebsite\asset\Screenshot 2026-01-21 204324.png">
+                            <img src="https://via.placeholder.com/900x500/aaffaa">
+                        </div>
+                        <div class="gallery-dots"></div>
+                    </div>
+
+                    <iframe src="https://www.youtube.com/embed/rnMFdbEvEcA"></iframe>
 
                     <div class="tech">
                         <span>Unity</span>
                         <span>C#</span>
                         <span>AI</span>
-                        <span>Game Design</span>
                     </div>
+
                 </div>
 
+                <!-- PROJECT 2 -->
                 <div class="project">
+
                     <div class="project-top">
                         <div class="project-title">Blackout: The Vagabond's Odyssey</div>
-                        <div class="project-meta">3D Roguelike • 1/2025 — 5/2025</div>
+                        <div class="project-meta">3D Roguelike • 2025</div>
                     </div>
 
                     <div class="project-desc">
-                        Designed combat systems, skill architecture, and implemented
-                        performance optimizations to maintain stable FPS across gameplay scenes.
+                        Combat systems, skill architecture and FPS optimization across gameplay scenes.
                     </div>
+
+                    <div class="gallery">
+                        <div class="gallery-track">
+                            <img src="https://via.placeholder.com/900x500/222244">
+                            <img src="https://via.placeholder.com/900x500/444488">
+                            <img src="https://via.placeholder.com/900x500/6666aa">
+                        </div>
+                        <div class="gallery-dots"></div>
+                    </div>
+
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
 
                     <div class="tech">
                         <span>Unity</span>
@@ -336,10 +389,10 @@
                         <span>Optimization</span>
                         <span>Combat System</span>
                     </div>
+
                 </div>
 
             </div>
-
         </section>
 
         <footer>
@@ -348,6 +401,117 @@
 
     </div>
 
+    <script>
+        // Prevent default browser drag ghost image
+        window.addEventListener('dragstart', e => e.preventDefault());
+        document.body.style.userSelect = 'none';
+
+        document.querySelectorAll('.gallery').forEach(gallery => {
+
+            const track = gallery.querySelector('.gallery-track');
+            const slides = track.children;
+            const dotsContainer = gallery.querySelector('.gallery-dots');
+
+            let index = 0;
+            let startX = 0;
+            let currentTranslate = 0;
+            let isDragging = false;
+            let autoSlideInterval;
+
+            // Create dots
+            for (let i = 0; i < slides.length; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'gallery-dot';
+                if (i === 0) dot.classList.add('active');
+                dotsContainer.appendChild(dot);
+            }
+
+            const dots = dotsContainer.children;
+
+            function update() {
+                track.style.transition = 'transform .4s ease';
+                track.style.transform = `translateX(-${index * 100}%)`;
+                [...dots].forEach(d => d.classList.remove('active'));
+                dots[index].classList.add('active');
+            }
+
+            function nextSlide() {
+                index++;
+                if (index >= slides.length) index = 0;
+                update();
+            }
+
+            function startAutoSlide() {
+                stopAutoSlide();
+                autoSlideInterval = setInterval(nextSlide, 3500);
+            }
+
+            function stopAutoSlide() {
+                if (autoSlideInterval) clearInterval(autoSlideInterval);
+            }
+
+            // TOUCH EVENTS
+            gallery.addEventListener('touchstart', e => {
+                stopAutoSlide();
+                isDragging = true;
+                track.style.transition = 'none';
+                startX = e.touches[0].clientX;
+            }, { passive: true });
+
+            gallery.addEventListener('touchmove', e => {
+                if (!isDragging) return;
+                let moveX = e.touches[0].clientX;
+                let diff = moveX - startX;
+                track.style.transform = `translateX(calc(-${index * 100}% + ${diff}px))`;
+            }, { passive: true });
+
+            gallery.addEventListener('touchend', e => {
+                if (!isDragging) return;
+                isDragging = false;
+
+                let diff = e.changedTouches[0].clientX - startX;
+                if (diff > 60 && index > 0) index--;
+                if (diff < -60 && index < slides.length - 1) index++;
+
+                update();
+                startAutoSlide();
+            });
+
+            // MOUSE EVENTS
+            gallery.addEventListener('mousedown', e => {
+                e.preventDefault();
+                stopAutoSlide();
+                isDragging = true;
+                track.style.transition = 'none';
+                startX = e.clientX;
+            });
+
+            window.addEventListener('mousemove', e => {
+                if (!isDragging) return;
+                let diff = e.clientX - startX;
+                track.style.transform = `translateX(calc(-${index * 100}% + ${diff}px))`;
+            });
+
+            window.addEventListener('mouseup', e => {
+                if (!isDragging) return;
+                isDragging = false;
+
+                let diff = e.clientX - startX;
+                if (diff > 60 && index > 0) index--;
+                if (diff < -60 && index < slides.length - 1) index++;
+
+                update();
+                startAutoSlide();
+            });
+
+            // Pause when hover
+            gallery.addEventListener('mouseenter', stopAutoSlide);
+            gallery.addEventListener('mouseleave', startAutoSlide);
+
+            startAutoSlide();
+
+        });
+    </script>
+
 </body>
 </html>
-
